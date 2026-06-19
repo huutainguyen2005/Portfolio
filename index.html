@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/intl-tel-input@17.0.8/build/css/intlTelInput.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Huu Tai Nguyen</a>
+      <i class="fa-solid fa-bars" id="menu-icon"></i>
+      <nav>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </header>
+    <section class="home" id="home">
+      <!-- <div class="home-img">
+        <img src="images/main.jpg" alt="Avatar" />
+      </div> -->
+      <div class="home-content">
+        <h1>Hi, I'm <span>Huu Tai Nguyen</span></h1>
+        <h3 class="typing-text">I'm a <span></span></h3>
+        <p>
+          I am a Backend Developer specializing in building robust, scalable
+          applications. With a strong focus on Java, Spring Boot, and
+          microservices architecture, I enjoy solving complex logic problems and
+          optimizing system performance. My experience ranges from crafting
+          efficient APIs to integrating advanced search engines like
+          Elasticsearch and managing deployments with Docker.
+        </p>
+        <div class="social-icons">
+          <a href="http://www.linkedin.com/in/tainguyenhuu205" target="_blank"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/huutainguyen2005" target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a href="https://www.facebook.com/tainh932005" target="_blank"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/tainh932005_" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </div>
+        <a
+          href="mailto:tainh.ce190284@gmail.com?subject=Offer%20for%20Backend%20Developer"
+          class="btn"
+          >Hire me</a
+        >
+      </div>
+    </section>
+    <section class="services" id="services">
+      <h2 class="heading">My <span>Services</span></h2>
+      <div class="services-container">
+        <div class="box">
+          <i
+            class="fa-solid fa-server"
+            style="
+              font-size: 4rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>Backend API Development</h3>
+          <p>
+            Designing and building robust, secure, and scalable RESTful APIs
+            using Java and the Spring Boot ecosystem. Ensuring high performance
+            and seamless data integration for client applications.
+          </p>
+        </div>
+
+        <div class="box">
+          <i
+            class="fa-solid fa-magnifying-glass"
+            style="
+              font-size: 4rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>Advanced Search Solutions</h3>
+          <p>
+            Implementing highly optimized full-text, semantic, and hybrid search
+            engines using Elasticsearch. Enhancing user experience with fast,
+            accurate, and reliable data retrieval systems.
+          </p>
+        </div>
+
+        <div class="box">
+          <i
+            class="fa-solid fa-sitemap"
+            style="
+              font-size: 4rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>System Architecture</h3>
+          <p>
+            Structuring resilient microservices architectures and containerizing
+            applications using Docker. Focusing on clean code, maintainability,
+            and streamlined deployment processes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="skills">
+      <h2 class="heading">My <span>Skills</span></h2>
+      <div class="skills-container">
+        <div class="box">
+          <i
+            class="fa-brands fa-java"
+            style="
+              font-size: 4rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>Backend Core</h3>
+          <p>
+            Java, Spring Boot, Spring Data, Microservices Architecture, RESTful
+            APIs, Python.
+          </p>
+        </div>
+
+        <div class="box">
+          <i
+            class="fa-solid fa-database"
+            style="
+              font-size: 4rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>Databases & Search</h3>
+          <p>
+            Elasticsearch, Vector Embeddings, Semantic Search, MySQL, MongoDB.
+          </p>
+        </div>
+
+        <div class="box">
+          <i
+            class="fa-solid fa-gear"
+            style="
+              font-size: 4rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>DevOps & Tools</h3>
+          <p>Docker, ELK Stack, Grafana, Git, GitLab, IntelliJ Ultimate.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="projects" id="projects">
+      <h2 class="heading">Featured <span>Projects</span></h2>
+      <div class="services-container">
+        <div class="box">
+          <i
+            class="fa-solid fa-bolt"
+            style="
+              font-size: 3rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>Flash Sale System</h3>
+          <p style="margin-bottom: 1.5rem">
+            Hệ thống backend chịu tải cao xử lý các luồng mua hàng đồng thời.
+            Xây dựng bằng Spring Boot Microservices, tối ưu hóa database queries
+            để tránh nghẽn cổ chai.
+          </p>
+          <a
+            href="#"
+            style="
+              color: var(--main-color);
+              font-weight: 600;
+              font-size: 1.4rem;
+            "
+            >View Source <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <div class="box">
+          <i
+            class="fa-solid fa-magnifying-glass-chart"
+            style="
+              font-size: 3rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>Pharmacy Search Engine</h3>
+          <p style="margin-bottom: 1.5rem">
+            Công cụ tìm kiếm thông minh tích hợp Elasticsearch. Triển khai thuật
+            toán hybrid search kết hợp vector embeddings để mang lại kết quả tìm
+            kiếm theo ngữ nghĩa cực kỳ chuẩn xác.
+          </p>
+          <a
+            href="#"
+            style="
+              color: var(--main-color);
+              font-weight: 600;
+              font-size: 1.4rem;
+            "
+            >View Source <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <div class="box">
+          <i
+            class="fa-solid fa-mug-hot"
+            style="
+              font-size: 3rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>Cafe Management POS</h3>
+          <p style="margin-bottom: 1.5rem">
+            Hệ thống quản lý tích hợp chức năng điểm bán hàng (POS), phân quyền
+            nhân viên và logic điểm thưởng khách hàng. Giao diện trực quan với
+            thanh tìm kiếm tiêu chuẩn (magnifying glass trigger).
+          </p>
+          <a
+            href="#"
+            style="
+              color: var(--main-color);
+              font-weight: 600;
+              font-size: 1.4rem;
+            "
+            >View Source <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="experience" id="experience">
+      <h2 class="heading">My <span>Experience</span></h2>
+      <div class="experience-container">
+        <div class="box">
+          <i
+            class="fa-solid fa-briefcase"
+            style="
+              font-size: 3rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>Jan 2026 - Apr 2026</h3>
+          <h3 style="color: var(--main-color); font-size: 2rem">
+            Backend Developer Intern
+          </h3>
+          <h4 style="font-size: 1.6rem; font-weight: 500; margin-bottom: 1rem">
+            FPT Software Ho Chi Minh City
+          </h4>
+          <p>
+            Completed a professional internship placement focusing on Java
+            backend development. Participated in project implementation,
+            utilizing the Spring ecosystem to build robust APIs, manage
+            databases, and optimize system performance.
+          </p>
+        </div>
+
+        <div class="box">
+          <i
+            class="fa-solid fa-graduation-cap"
+            style="
+              font-size: 3rem;
+              color: var(--main-color);
+              margin-bottom: 1.5rem;
+            "
+          ></i>
+          <h3>2023 - Present</h3>
+          <h3 style="color: var(--main-color); font-size: 2rem">
+            Software Engineering Student
+          </h3>
+          <h4 style="font-size: 1.6rem; font-weight: 500; margin-bottom: 1rem">
+            FPT University Can Tho
+          </h4>
+          <p>
+            Currently pursuing a Bachelor's degree in Software Engineering.
+            Gaining solid foundations in software architecture, data structures,
+            algorithms, and practical development methodologies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me</span></h2>
+      <form action="#">
+        <div class="input-box">
+          <input
+            type="text"
+            placeholder="Full Name"
+            required
+            oninvalid="this.setCustomValidity('Please fill out this field.')"
+            oninput="this.setCustomValidity('')"
+          />
+          <input
+            type="email"
+            placeholder="Email Address"
+            required
+            oninvalid="
+              this.setCustomValidity(
+                this.value === ''
+                  ? 'Please fill out this field.'
+                  : 'Please enter a valid email address.',
+              )
+            "
+            oninput="this.setCustomValidity('')"
+          />
+        </div>
+
+        <div class="input-box" style="display: block; width: 100%">
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            required
+            oninvalid="this.setCustomValidity('Please fill out this field.')"
+            oninput="this.setCustomValidity('')"
+          />
+        </div>
+
+        <div class="input-box" style="display: block; width: 100%">
+          <input type="text" placeholder="Subject" style="width: 100%" />
+        </div>
+
+        <textarea
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+          required
+          oninvalid="this.setCustomValidity('Please fill out this field.')"
+          oninput="this.setCustomValidity('')"
+        ></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+    <div id="toast-container"></div>
+    <script src="https://unpkg.com/intl-tel-input@17.0.8/build/js/intlTelInput.min.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+      } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+
+      import emailjs from "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/+esm";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAqAlLdRdXhtna8bikZkO9Rgj5wcNziWyM",
+        authDomain: "my-portfolio-web-d8f96.firebaseapp.com",
+        projectId: "my-portfolio-web-d8f96",
+        storageBucket: "my-portfolio-web-d8f96.firebasestorage.app",
+        messagingSenderId: "1046272839986",
+        appId: "1:1046272839986:web:fcd1f20185dd94c74a472b",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      emailjs.init({
+        publicKey: "hxGgt-tU4iN_-GQQh",
+      });
+
+      window.db = db;
+      window.collection = collection;
+      window.addDoc = addDoc;
+      window.emailjs = emailjs;
+    </script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
