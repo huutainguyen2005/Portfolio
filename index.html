@@ -3,365 +3,648 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f0e8" />
+    <meta
+      name="description"
+      content="Huu Tai Nguyen is a Backend Developer and Software Engineering student focused on Java, Spring Boot, microservices, databases, and search systems."
+    />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
     <link
       rel="stylesheet"
       href="https://unpkg.com/intl-tel-input@17.0.8/build/css/intlTelInput.css"
     />
+    <script>
+      // Apply a saved theme before the stylesheet paints to avoid a light/dark flash.
+      try {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        if (savedTheme === "light" || savedTheme === "dark") {
+          document.documentElement.dataset.theme = savedTheme;
+        }
+      } catch (_) {
+        // Storage can be unavailable in private or restricted browsing contexts.
+      }
+    </script>
     <link rel="stylesheet" href="style.css" />
-    <title>My Portfolio</title>
+    <title>Huu Tai Nguyen — Backend Developer</title>
   </head>
   <body>
-    <header>
-      <a href="#" class="logo">Huu Tai Nguyen</a>
-      <i class="fa-solid fa-bars" id="menu-icon"></i>
-      <nav>
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-    </header>
-    <section class="home" id="home">
-      <!-- <div class="home-img">
-        <img src="images/main.jpg" alt="Avatar" />
-      </div> -->
-      <div class="home-content">
-        <h1>Hi, I'm <span>Huu Tai Nguyen</span></h1>
-        <h3 class="typing-text">I'm a <span></span></h3>
-        <p>
-          I am a Backend Developer specializing in building robust, scalable
-          applications. With a strong focus on Java, Spring Boot, and
-          microservices architecture, I enjoy solving complex logic problems and
-          optimizing system performance. My experience ranges from crafting
-          efficient APIs to integrating advanced search engines like
-          Elasticsearch and managing deployments with Docker.
-        </p>
-        <div class="social-icons">
-          <a href="http://www.linkedin.com/in/tainguyenhuu205" target="_blank"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a href="https://github.com/huutainguyen2005" target="_blank"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a href="https://www.facebook.com/tainh932005" target="_blank"
-            ><i class="fa-brands fa-facebook"></i
-          ></a>
-          <a href="https://www.instagram.com/tainh932005_" target="_blank"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-        </div>
-        <a
-          href="mailto:tainh.ce190284@gmail.com?subject=Offer%20for%20Backend%20Developer"
-          class="btn"
-          >Hire me</a
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header" id="site-header">
+      <a class="brand" href="#home" aria-label="Huu Tai Nguyen, go to top">
+        <span class="brand-mark" aria-hidden="true">HT</span>
+        <span class="brand-name"
+          >Huu Tai Nguyen<span class="brand-period">.</span></span
         >
-      </div>
-    </section>
-    <section class="services" id="services">
-      <h2 class="heading">My <span>Services</span></h2>
-      <div class="services-container">
-        <div class="box">
-          <i
-            class="fa-solid fa-server"
-            style="
-              font-size: 4rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>Backend API Development</h3>
-          <p>
-            Designing and building robust, secure, and scalable RESTful APIs
-            using Java and the Spring Boot ecosystem. Ensuring high performance
-            and seamless data integration for client applications.
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span></span><span></span>
+      </button>
+
+      <nav
+        class="primary-navigation"
+        id="primary-navigation"
+        aria-label="Primary navigation"
+      >
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link nav-contact" href="#contact"
+          >Contact <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch to dark mode"
+        aria-pressed="false"
+        title="Switch to dark mode"
+      >
+        <span class="theme-toggle-icon" aria-hidden="true">
+          <svg
+            class="theme-icon-sun"
+            viewBox="0 0 24 24"
+            fill="none"
+            focusable="false"
+          >
+            <circle cx="12" cy="12" r="3.5"></circle>
+            <path
+              d="M12 2.5v2M12 19.5v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2.5 12h2m15 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+            ></path>
+          </svg>
+          <svg
+            class="theme-icon-moon"
+            viewBox="0 0 24 24"
+            fill="none"
+            focusable="false"
+          >
+            <path
+              d="M20.2 15.2A8.6 8.6 0 0 1 8.8 3.8a8.7 8.7 0 1 0 11.4 11.4Z"
+            ></path>
+            <path d="M16.8 3.2v3.2M15.2 4.8h3.2"></path>
+          </svg>
+        </span>
+        <span class="theme-toggle-label mono">LIGHT</span>
+      </button>
+    </header>
+
+    <main id="main-content">
+      <section
+        class="hero section-shell"
+        id="home"
+        aria-labelledby="hero-title"
+      >
+        <div class="hero-topline mono">
+          <span>
+            <span class="status-dot" aria-hidden="true"></span>
+            SOFTWARE ENGINEERING / <span id="current-year"></span>
+          </span>
+          <span>BASED IN CAN THO, VIETNAM</span>
+        </div>
+
+        <div class="hero-layout">
+          <div class="hero-main">
+            <p class="eyebrow">Backend developer · Systems-minded builder</p>
+            <h1 id="hero-title">
+              Huu Tai<br /><span class="hero-surname"
+                >Nguyen<span class="accent-period">.</span></span
+              >
+            </h1>
+            <div class="hero-role-row">
+              <span class="role-index mono">01 / WHAT I DO</span>
+              <p class="hero-role">
+                I build the logic<br class="desktop-break" />
+                behind the interface.
+              </p>
+            </div>
+          </div>
+
+          <aside class="hero-aside" aria-label="Technical focus">
+            <div class="aside-rule" aria-hidden="true"></div>
+            <p class="mono aside-label">CURRENT FOCUS</p>
+            <p class="hero-intro">
+              Backend development with Java and Spring Boot, from API design and
+              microservices to data stores and search systems.
+            </p>
+            <div class="focus-list" aria-label="Core technologies">
+              <span>JAVA</span><span>SPRING BOOT</span><span>ELASTICSEARCH</span
+              ><span>DOCKER</span>
+            </div>
+            <a class="text-link hero-contact-link" href="#contact"
+              >Have a project in mind? <span aria-hidden="true">↗</span></a
+            >
+          </aside>
+        </div>
+
+        <div class="hero-footer">
+          <div class="hero-socials" aria-label="Social profiles">
+            <a
+              href="https://github.com/huutainguyen2005"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub (opens in a new tab)"
+              >GitHub <span aria-hidden="true">↗</span></a
+            >
+            <a
+              href="https://www.linkedin.com/in/tainguyenhuu205"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn (opens in a new tab)"
+              >LinkedIn <span aria-hidden="true">↗</span></a
+            >
+            <a
+              href="https://www.facebook.com/tainh932005"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook (opens in a new tab)"
+              >Facebook <span aria-hidden="true">↗</span></a
+            >
+            <a
+              href="https://www.instagram.com/tainh932005_"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram (opens in a new tab)"
+              >Instagram <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <a class="scroll-cue mono" href="#projects"
+            ><span aria-hidden="true">↓</span> SCROLL TO EXPLORE</a
+          >
+        </div>
+        <span class="hero-index mono" aria-hidden="true">HTN — 26</span>
+      </section>
+
+      <section
+        class="projects section-shell"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-heading section-heading-wide">
+          <div>
+            <p class="eyebrow mono">SELECTED WORK / 01—03</p>
+            <h2 id="projects-title">
+              Things built<span class="accent-period">.</span>
+            </h2>
+          </div>
+          <p class="section-intro">
+            A selection of backend concepts and systems I’ve worked on, with a
+            focus on reliable workflows, useful search, and practical software.
           </p>
         </div>
 
-        <div class="box">
-          <i
-            class="fa-solid fa-magnifying-glass"
-            style="
-              font-size: 4rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>Advanced Search Solutions</h3>
-          <p>
-            Implementing highly optimized full-text, semantic, and hybrid search
-            engines using Elasticsearch. Enhancing user experience with fast,
-            accurate, and reliable data retrieval systems.
+        <article class="project project-featured">
+          <div
+            class="project-art project-art-flash"
+            aria-label="Typographic visual for Flash Sale System"
+          >
+            <div class="art-topline mono">
+              <span>PROJECT / 01</span><span>CONCURRENCY</span>
+            </div>
+            <div class="flash-type" aria-hidden="true">
+              FLASH<span>SALE</span>
+            </div>
+            <div class="art-baseline">
+              <span class="art-signal" aria-hidden="true"></span
+              ><span class="mono">REQUEST → PURCHASE</span
+              ><span class="mono">SPRING / SERVICES</span>
+            </div>
+          </div>
+          <div class="project-copy">
+            <div class="project-meta mono">
+              <span>01 — SYSTEMS</span><span>MICROSERVICES</span>
+            </div>
+            <h3>Flash Sale<br />System</h3>
+            <p>
+              A backend system concept focused on concurrent purchase
+              processing. Built around Spring Boot microservices, with attention
+              to database queries and the bottlenecks that can emerge under
+              load.
+            </p>
+            <ul class="tag-list" aria-label="Technologies">
+              <li>Java</li>
+              <li>Spring Boot</li>
+              <li>Microservices</li>
+            </ul>
+            <p class="project-link-unavailable mono">
+              REPOSITORY LINK NOT PROVIDED
+            </p>
+          </div>
+        </article>
+
+        <article class="project project-search">
+          <div class="project-copy">
+            <div class="project-meta mono">
+              <span>02 — RETRIEVAL</span><span>SEARCH SYSTEMS</span>
+            </div>
+            <h3>Pharmacy<br />Search Engine</h3>
+            <p>
+              A search experience concept using Elasticsearch and hybrid
+              retrieval, bringing full-text matching together with vector
+              embeddings to explore more context-aware results.
+            </p>
+            <ul class="tag-list" aria-label="Technologies">
+              <li>Elasticsearch</li>
+              <li>Vector embeddings</li>
+              <li>Semantic search</li>
+            </ul>
+            <p class="project-link-unavailable mono">
+              REPOSITORY LINK NOT PROVIDED
+            </p>
+          </div>
+          <div
+            class="project-art project-art-search"
+            aria-label="Typographic visual for Pharmacy Search Engine"
+          >
+            <div class="art-topline mono">
+              <span>PROJECT / 02</span><span>RETRIEVAL MODEL</span>
+            </div>
+            <div class="search-orbit" aria-hidden="true">
+              <span class="orbit-node node-lexical">LEXICAL</span>
+              <span class="orbit-node node-vector">VECTOR</span>
+              <span class="orbit-core">HYBRID<br />SEARCH</span>
+              <span class="orbit-line orbit-line-one"></span
+              ><span class="orbit-line orbit-line-two"></span>
+            </div>
+            <div class="art-baseline">
+              <span class="mono">QUERY / CONTEXT / RESULT</span
+              ><span class="mono">ELASTICSEARCH</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project-pos">
+          <div
+            class="project-art project-art-pos"
+            aria-label="Typographic visual for Cafe Management POS"
+          >
+            <div class="art-topline mono">
+              <span>PROJECT / 03</span><span>OPERATIONS</span>
+            </div>
+            <div class="pos-display" aria-hidden="true">
+              <span class="pos-label mono">CAFE / POS</span
+              ><span class="pos-symbol">+</span
+              ><span class="pos-stack">SALES<br />PEOPLE<br />LOYALTY</span>
+            </div>
+            <div class="art-baseline">
+              <span class="mono">WORKFLOW / ACCESS</span
+              ><span class="mono">COUNTER SYSTEM</span>
+            </div>
+          </div>
+          <div class="project-copy">
+            <div class="project-meta mono">
+              <span>03 — WORKFLOWS</span><span>POINT OF SALE</span>
+            </div>
+            <h3>Cafe Management<br />POS</h3>
+            <p>
+              A point-of-sale and cafe management concept covering day-to-day
+              sales workflows, employee permissions, and customer loyalty
+              points.
+            </p>
+            <ul class="tag-list" aria-label="Focus areas">
+              <li>POS workflows</li>
+              <li>Access control</li>
+              <li>Loyalty</li>
+            </ul>
+            <p class="project-link-unavailable mono">
+              REPOSITORY LINK NOT PROVIDED
+            </p>
+          </div>
+        </article>
+        <p class="projects-note mono">
+          PROJECT DESCRIPTIONS REFLECT DRAFT CONCEPTS; DETAILS CAN BE EXPANDED
+          WITH VERIFIED REPOSITORIES.
+        </p>
+      </section>
+
+      <section
+        class="about section-shell"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow mono">02 / APPROACH</p>
+          <h2 id="about-title">Engineering,<br /><span>with intent.</span></h2>
+        </div>
+        <div class="about-content">
+          <p class="about-lead">
+            I’m a Software Engineering student interested in the systems that
+            make products dependable: clear APIs, thoughtful data models, and
+            search that helps people find what they need.
+          </p>
+          <p class="about-body">
+            My work centers on Java and the Spring ecosystem, with supporting
+            experience across databases, Elasticsearch, and containerized
+            development. I enjoy breaking complex workflows into understandable
+            parts and keeping the implementation practical, maintainable, and
+            easy to reason about.
+          </p>
+          <div class="expertise-list">
+            <article class="expertise-row">
+              <span class="expertise-number mono">A / 01</span>
+              <h3>Backend API<br />Development</h3>
+              <p>
+                RESTful APIs with Java and Spring Boot, connecting application
+                logic to reliable data access.
+              </p>
+              <span class="expertise-mark" aria-hidden="true">↗</span>
+            </article>
+            <article class="expertise-row">
+              <span class="expertise-number mono">A / 02</span>
+              <h3>Search &amp;<br />Data Retrieval</h3>
+              <p>
+                Exploring full-text, semantic, and hybrid search patterns with
+                Elasticsearch and vector embeddings.
+              </p>
+              <span class="expertise-mark" aria-hidden="true">↗</span>
+            </article>
+            <article class="expertise-row">
+              <span class="expertise-number mono">A / 03</span>
+              <h3>Microservices &amp;<br />System Design</h3>
+              <p>
+                Structuring service-oriented applications and using Docker to
+                make development and deployment more consistent.
+              </p>
+              <span class="expertise-mark" aria-hidden="true">↗</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="experience section-shell"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow mono">03 / BACKGROUND</p>
+          <h2 id="experience-title">
+            The path<br />so far<span class="accent-period">.</span>
+          </h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date mono">
+              <span>JAN 2026</span><span>—</span><span>APR 2026</span>
+            </div>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-copy">
+              <p class="timeline-type mono">EXPERIENCE / 01</p>
+              <h3>Backend Developer Intern</h3>
+              <p class="timeline-place">
+                FPT Software <span>·</span> Ho Chi Minh City
+              </p>
+              <p class="timeline-description">
+                Completed a professional internship placement focusing on Java
+                backend development. Participated in project implementation,
+                utilizing the Spring ecosystem to build APIs, manage databases,
+                and work on system performance.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date mono">
+              <span>2023</span><span>—</span><span>PRESENT</span>
+            </div>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-copy">
+              <p class="timeline-type mono">EDUCATION / 02</p>
+              <h3>Software Engineering Student</h3>
+              <p class="timeline-place">
+                FPT University <span>·</span> Can Tho
+              </p>
+              <p class="timeline-description">
+                Currently pursuing a Bachelor’s degree in Software Engineering.
+                Building foundations in software architecture, data structures,
+                algorithms, and practical development methodologies.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="skills section-shell"
+        id="skills"
+        aria-labelledby="skills-title"
+      >
+        <div class="section-heading section-heading-wide">
+          <div>
+            <p class="eyebrow mono">04 / TOOLKIT</p>
+            <h2 id="skills-title">
+              Tools of the trade<span class="accent-period">.</span>
+            </h2>
+          </div>
+          <p class="section-intro">
+            A practical stack for building services, working with data, and
+            keeping systems observable and reproducible.
           </p>
         </div>
-
-        <div class="box">
-          <i
-            class="fa-solid fa-sitemap"
-            style="
-              font-size: 4rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>System Architecture</h3>
-          <p>
-            Structuring resilient microservices architectures and containerizing
-            applications using Docker. Focusing on clean code, maintainability,
-            and streamlined deployment processes.
-          </p>
+        <div class="skill-groups">
+          <article class="skill-group">
+            <p class="skill-index mono">STACK / 01</p>
+            <h3>Backend<br />Engineering</h3>
+            <ul>
+              <li>Java</li>
+              <li>Spring Boot</li>
+              <li>Spring Data</li>
+              <li>REST APIs</li>
+              <li>Microservices</li>
+              <li>Eureka Service Discovery</li>
+              <li>API Gateway</li>
+              <li>Python</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <p class="skill-index mono">STACK / 02</p>
+            <h3>Databases<br />&amp; Search</h3>
+            <ul>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>Elasticsearch</li>
+              <li>Vector Embeddings</li>
+              <li>Semantic Search</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <p class="skill-index mono">STACK / 03</p>
+            <h3>Infrastructure<br />&amp; Tools</h3>
+            <ul>
+              <li>Docker</li>
+              <li>ELK Stack</li>
+              <li>Grafana</li>
+              <li>Git</li>
+              <li>GitLab</li>
+              <li>IntelliJ IDEA Ultimate</li>
+            </ul>
+          </article>
         </div>
-      </div>
-    </section>
-
-    <section class="skills" id="skills">
-      <h2 class="heading">My <span>Skills</span></h2>
-      <div class="skills-container">
-        <div class="box">
-          <i
-            class="fa-brands fa-java"
-            style="
-              font-size: 4rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>Backend Core</h3>
-          <p>
-            Java, Spring Boot, Spring Data, Microservices Architecture, RESTful
-            APIs, Python.
-          </p>
+        <div class="skills-footnote mono">
+          <span>LEARN BY BUILDING</span><span>DOCUMENT / TEST / ITERATE</span>
         </div>
+      </section>
 
-        <div class="box">
-          <i
-            class="fa-solid fa-database"
-            style="
-              font-size: 4rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>Databases & Search</h3>
-          <p>
-            Elasticsearch, Vector Embeddings, Semantic Search, MySQL, MongoDB.
-          </p>
+      <section
+        class="contact section-shell"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="contact-topline mono">
+          <span>05 / CONTACT</span><span>OPEN TO A GOOD CONVERSATION</span>
         </div>
+        <div class="contact-layout">
+          <div class="contact-intro">
+            <p class="eyebrow">Say hello</p>
+            <h2 id="contact-title">
+              Let’s make<br />something <span>work.</span>
+            </h2>
+            <p class="contact-copy">
+              Have a question, an interesting problem, or an opportunity to talk
+              about backend engineering? Send a note.
+            </p>
+            <a class="contact-email" href="mailto:tainh.ce190284@gmail.com"
+              >tainh.ce190284@gmail.com <span aria-hidden="true">↗</span></a
+            >
+            <div class="contact-socials">
+              <a
+                href="https://github.com/huutainguyen2005"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub ↗</a
+              >
+              <a
+                href="https://www.linkedin.com/in/tainguyenhuu205"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn ↗</a
+              >
+              <a
+                href="https://www.facebook.com/tainh932005"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Facebook ↗</a
+              >
+              <a
+                href="https://www.instagram.com/tainh932005_"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Instagram ↗</a
+              >
+            </div>
+          </div>
 
-        <div class="box">
-          <i
-            class="fa-solid fa-gear"
-            style="
-              font-size: 4rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>DevOps & Tools</h3>
-          <p>Docker, ELK Stack, Grafana, Git, GitLab, IntelliJ Ultimate.</p>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="full-name"
+                  >Full name <span aria-hidden="true">*</span></label
+                >
+                <input
+                  id="full-name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="email-address"
+                  >Email address <span aria-hidden="true">*</span></label
+                >
+                <input
+                  id="email-address"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="phone"
+                >International phone number
+                <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Your phone number"
+                autocomplete="tel-national"
+                required
+              />
+              <p class="field-hint">
+                Country code defaults to Vietnam. Choose another country from
+                the selector.
+              </p>
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                placeholder="What is this about?"
+              />
+            </div>
+            <div class="field">
+              <label for="message"
+                >Message <span aria-hidden="true">*</span></label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="A little context goes a long way…"
+                required
+              ></textarea>
+            </div>
+            <div class="form-footer">
+              <p class="form-note mono">FIELDS MARKED * ARE REQUIRED</p>
+              <button type="submit" class="submit-button">
+                <span>Send message</span
+                ><span class="submit-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+            <p
+              class="form-status"
+              id="form-status"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
         </div>
-      </div>
-    </section>
+        <footer class="site-footer">
+          <a class="footer-brand" href="#home">HTN<span>.</span></a>
+          <p class="mono">DESIGNED WITH INTENT · BUILT WITH CODE</p>
+          <a class="back-to-top mono" href="#home">BACK TO TOP ↑</a>
+        </footer>
+      </section>
+    </main>
 
-    <!-- <section class="projects" id="projects">
-      <h2 class="heading">Featured <span>Projects</span></h2>
-      <div class="services-container">
-        <div class="box">
-          <i
-            class="fa-solid fa-bolt"
-            style="
-              font-size: 3rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>Flash Sale System</h3>
-          <p style="margin-bottom: 1.5rem">
-            Hệ thống backend chịu tải cao xử lý các luồng mua hàng đồng thời.
-            Xây dựng bằng Spring Boot Microservices, tối ưu hóa database queries
-            để tránh nghẽn cổ chai.
-          </p>
-          <a
-            href="#"
-            style="
-              color: var(--main-color);
-              font-weight: 600;
-              font-size: 1.4rem;
-            "
-            >View Source <i class="fa-solid fa-arrow-right"></i
-          ></a>
-        </div>
+    <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
-        <div class="box">
-          <i
-            class="fa-solid fa-magnifying-glass-chart"
-            style="
-              font-size: 3rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>Pharmacy Search Engine</h3>
-          <p style="margin-bottom: 1.5rem">
-            Công cụ tìm kiếm thông minh tích hợp Elasticsearch. Triển khai thuật
-            toán hybrid search kết hợp vector embeddings để mang lại kết quả tìm
-            kiếm theo ngữ nghĩa cực kỳ chuẩn xác.
-          </p>
-          <a
-            href="#"
-            style="
-              color: var(--main-color);
-              font-weight: 600;
-              font-size: 1.4rem;
-            "
-            >View Source <i class="fa-solid fa-arrow-right"></i
-          ></a>
-        </div>
-
-        <div class="box">
-          <i
-            class="fa-solid fa-mug-hot"
-            style="
-              font-size: 3rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>Cafe Management POS</h3>
-          <p style="margin-bottom: 1.5rem">
-            Hệ thống quản lý tích hợp chức năng điểm bán hàng (POS), phân quyền
-            nhân viên và logic điểm thưởng khách hàng. Giao diện trực quan với
-            thanh tìm kiếm tiêu chuẩn (magnifying glass trigger).
-          </p>
-          <a
-            href="#"
-            style="
-              color: var(--main-color);
-              font-weight: 600;
-              font-size: 1.4rem;
-            "
-            >View Source <i class="fa-solid fa-arrow-right"></i
-          ></a>
-        </div>
-      </div>
-    </section> -->
-
-    <section class="experience" id="experience">
-      <h2 class="heading">My <span>Experience</span></h2>
-      <div class="experience-container">
-        <div class="box">
-          <i
-            class="fa-solid fa-briefcase"
-            style="
-              font-size: 3rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>Jan 2026 - Apr 2026</h3>
-          <h3 style="color: var(--main-color); font-size: 2rem">
-            Backend Developer Intern
-          </h3>
-          <h4 style="font-size: 1.6rem; font-weight: 500; margin-bottom: 1rem">
-            FPT Software Ho Chi Minh City
-          </h4>
-          <p>
-            Completed a professional internship placement focusing on Java
-            backend development. Participated in project implementation,
-            utilizing the Spring ecosystem to build robust APIs, manage
-            databases, and optimize system performance.
-          </p>
-        </div>
-
-        <div class="box">
-          <i
-            class="fa-solid fa-graduation-cap"
-            style="
-              font-size: 3rem;
-              color: var(--main-color);
-              margin-bottom: 1.5rem;
-            "
-          ></i>
-          <h3>2023 - Present</h3>
-          <h3 style="color: var(--main-color); font-size: 2rem">
-            Software Engineering Student
-          </h3>
-          <h4 style="font-size: 1.6rem; font-weight: 500; margin-bottom: 1rem">
-            FPT University Can Tho
-          </h4>
-          <p>
-            Currently pursuing a Bachelor's degree in Software Engineering.
-            Gaining solid foundations in software architecture, data structures,
-            algorithms, and practical development methodologies.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me</span></h2>
-      <form action="#">
-        <div class="input-box">
-          <input
-            type="text"
-            placeholder="Full Name"
-            required
-            oninvalid="this.setCustomValidity('Please fill out this field.')"
-            oninput="this.setCustomValidity('')"
-          />
-          <input
-            type="email"
-            placeholder="Email Address"
-            required
-            oninvalid="
-              this.setCustomValidity(
-                this.value === ''
-                  ? 'Please fill out this field.'
-                  : 'Please enter a valid email address.',
-              )
-            "
-            oninput="this.setCustomValidity('')"
-          />
-        </div>
-
-        <div class="input-box" style="display: block; width: 100%">
-          <input
-            type="tel"
-            id="phone"
-            placeholder="Phone Number"
-            required
-            oninvalid="this.setCustomValidity('Please fill out this field.')"
-            oninput="this.setCustomValidity('')"
-          />
-        </div>
-
-        <div class="input-box" style="display: block; width: 100%">
-          <input type="text" placeholder="Subject" style="width: 100%" />
-        </div>
-
-        <textarea
-          cols="30"
-          rows="10"
-          placeholder="Your Message"
-          required
-          oninvalid="this.setCustomValidity('Please fill out this field.')"
-          oninput="this.setCustomValidity('')"
-        ></textarea>
-
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </section>
-    <div id="toast-container"></div>
     <script src="https://unpkg.com/intl-tel-input@17.0.8/build/js/intlTelInput.min.js"></script>
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
       import {
@@ -369,7 +652,6 @@
         collection,
         addDoc,
       } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
-
       import emailjs from "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/+esm";
 
       const firebaseConfig = {
@@ -381,17 +663,24 @@
         appId: "1:1046272839986:web:fcd1f20185dd94c74a472b",
       };
 
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-
-      emailjs.init({
-        publicKey: "hxGgt-tU4iN_-GQQh",
-      });
-
-      window.db = db;
-      window.collection = collection;
-      window.addDoc = addDoc;
-      window.emailjs = emailjs;
+      try {
+        const app = initializeApp(firebaseConfig);
+        window.db = getFirestore(app);
+        window.collection = collection;
+        window.addDoc = addDoc;
+        emailjs.init({ publicKey: "hxGgt-tU4iN_-GQQh" });
+        window.emailjs = emailjs;
+        window.portfolioIntegrationsReady = true;
+        window.dispatchEvent(new Event("portfolio-integrations-ready"));
+      } catch (error) {
+        window.portfolioIntegrationsReady = false;
+        window.portfolioIntegrationsError = error;
+        console.error(
+          "Portfolio contact integrations failed to initialize:",
+          error,
+        );
+        window.dispatchEvent(new Event("portfolio-integrations-ready"));
+      }
     </script>
     <script type="module" src="script.js"></script>
   </body>
